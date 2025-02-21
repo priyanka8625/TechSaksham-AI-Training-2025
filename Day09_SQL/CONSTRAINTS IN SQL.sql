@@ -90,6 +90,12 @@ insert into pk_table values(1, 2),
 (2, 3),
 (3, 3);
 
+------------------------------------------
+-- DROPPING PRIMARY KEY
+---------------------------------------
+
+-- alter table pk_table 
+	-- drop primary key;
 
 ---------------------------------------
 -- FOREIGN KEY
@@ -106,3 +112,10 @@ describe fk_table;
 -- cannot insert a record untill the corresponding value is not primary column
 insert into fk_table values (1, 4); -- throws fk contraint fails error
 insert into fk_table values (1, 2);
+
+------------------------------------------
+-- DROPPING PRIMARY KEY
+---------------------------------------
+
+-- alter table fk_table
+-- drop constraint fk_constraint_name;
