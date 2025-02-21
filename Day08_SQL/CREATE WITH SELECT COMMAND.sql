@@ -10,4 +10,7 @@ create table temp_schema.demo1 as
 select * from temp_schema.table1;
 
 create table temp_schema.demo2 as 
-select
+select col_num from temp_schema.table1;
+
+select * from temp_schema.demo1;
+select * from temp_schema.demo2;

@@ -39,3 +39,13 @@ insert into alter_demo values(NULL, 100, 200);
 
 select * from alter_demo;
 
+-----------------------------------------------
+-- DEFAULT 
+----------------------------------------------
+
+-- add default constraint
+alter table alter_demo 
+modify column col6 INT DEFAULT 10;
+
+insert into alter_demo values(1, NULL, 2);
+insert into alter_demo(col1, col3) values(2, 3);
