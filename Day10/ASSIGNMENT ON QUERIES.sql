@@ -38,7 +38,7 @@ SELECT * FROM COUNTRIES.COUNTRIES
 -- select all records from the table
 -- update the records to change the job title from "SALESMAN" TO "SENIOR SALESMAN" if the employee TOTAL_PAY is over 2000.
 -- select all records from the table.
--- drop the table
+-- drop the ta ble
 */
 
 SET SQL_SAFE_UPDATES = 0;
@@ -52,3 +52,8 @@ SELECT * FROM HR.SALES_PEOPLE;
 
 UPDATE HR.SALES_PEOPLE SET JOB='SENIOR_SALESMAN' 
 	WHERE TOTAL_PAY>2000;
+    
+/*
+*/
+SELECT ORDER_ID, PRODUCT_ID, ROUND(UNIT_PRICE*QUANTITY, 1) AS LINE_ITEM_AMOUNT 
+	FROM CUSTOMER_ORDERS.ORDER_ITEMS;
