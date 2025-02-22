@@ -30,3 +30,25 @@ SELECT * FROM COUNTRIES.COUNTRIES
 	WHERE ((POPULATION BETWEEN 100000000 AND 200000000) OR (AREA_KM2 > 5000000))
 		  AND
           (NAME NOT LIKE '% %');
+
+/*
+1. Create a table in the HR schema called SALES_PEOPLE. The structure of this table should be the same as the EMP table... with one difference:
+==> Instead of the SAL and COMM columns hava a column called TOTAL_PAY
+2. Insert records into the SALES_PEOPLE table from the EMP table with only the records where the job is SALESMAN. (SAL + COMM = TOTAL_PAY)
+-- select all records from the table
+-- update the records to change the job title from "SALESMAN" TO "SENIOR SALESMAN" if the employee TOTAL_PAY is over 2000.
+-- select all records from the table.
+-- drop the table
+*/
+
+SET SQL_SAFE_UPDATES = 0;
+
+create table HR.SALES_PEOPLE as
+	SELECT EMP_NO, E_NAME, JOB, MGR, HIRE_DATE, (SAL+COMM) AS TOTAL_PAY, DEPT_NO 
+    FROM HR.EMP 
+    WHERE JOB='SALESMAN';
+    
+SELECT * FROM HR.SALES_PEOPLE;
+
+UPDATE HR.SALES_PEOPLE SET JOB='SENIOR_SALESMAN' 
+	WHERE TOTAL_PAY>2000;
